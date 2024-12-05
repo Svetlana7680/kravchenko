@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсор</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        #customCursor {
+            position: absolute;
+            width: 20px; /* Ширина курсора */
+            height: 20px; /* Высота курсора */
+            background-color: rgb(62, 3, 70); /* Цвет курсора */
+            border-radius: 80%; /* Закругленные углы */
+            pointer-events: none; /* Игнорировать события мыши */
+            transform: translate(-50%, -50%); /* Центрирование курсора */
+        }
+    </style>
+</head>
+<body>
+
+<div id="customCursor"></div>
+
+<script>
+    const cursor = document.getElementById('customCursor');
+
+    document.addEventListener('mousemove', (event) => {
+        cursor.style.left = event.clientX - (cursor.offsetWidth / 2) + 'px';
+        cursor.style.top = event.clientY - (cursor.offsetHeight / 2) + 'px';
+    });
+</script>
+
+</body>
+</html>
